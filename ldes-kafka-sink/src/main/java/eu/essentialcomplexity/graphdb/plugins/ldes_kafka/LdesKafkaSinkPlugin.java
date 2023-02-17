@@ -69,7 +69,7 @@ public class LdesKafkaSinkPlugin extends PluginBase implements StatementListener
 		contextMap.forEach( (Long context, Set subjects) -> {
 
 			Value graph = pluginConnection.getEntities().get(context);
-			System.out.print("Output for stream " + graph + "\n");
+			getLogger().info("Output for stream " + graph + "\n");
 			Set compactedSubjectList = reduceSubjectsToRootNodes(subjects, context, pluginConnection);
 			Set expandedSubjectList = expandSubjectList(compactedSubjectList, context, pluginConnection);
 			StatementIterator iterator = getStatements(expandedSubjectList, context, pluginConnection);
@@ -78,7 +78,7 @@ public class LdesKafkaSinkPlugin extends PluginBase implements StatementListener
 				Value p = pluginConnection.getEntities().get(iterator.predicate);
 				Value o = pluginConnection.getEntities().get(iterator.object);
 				Value g = pluginConnection.getEntities().get(iterator.context);
-				System.out.print("Here we go: s " + s + " p " + p + " o " + o +" g " + g + "\n");
+				getLogger().info("Here we go: s " + s + " p " + p + " o " + o +" g " + g + "\n");
 			}
 		});
 	}
