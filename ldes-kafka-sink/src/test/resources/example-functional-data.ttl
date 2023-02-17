@@ -1,0 +1,21 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://example.com/data/> .
+@prefix model: <http://example.com/model/> .
+
+model:Setting1 model:labelPredicate rdfs:label ;
+    model:language "es" .
+
+data:StarTrekTOS a model:Movie ;
+    rdfs:label "Star Trek: The Original Series"@en ,
+        "La conquista del espacio"@es-ES ,
+        "Viaje a las estrellas: la serie original"@es-LA .
+
+data:StarTrekTNG a model:Movie ;
+    rdfs:label "Star Trek: The Next Generation"@en ,
+        "Star Trek: A Geração Seguinte"@pt-PT ,
+        "Jornada nas Estrelas: A Nova Geração"@pt-BR ,
+        "Star Trek: The Next Generation" .
+
+data:StarTrekSNW a model:Movie ;
+    rdfs:label "Star Trek: Fremde neue Welten"@de ,
+        "Star Trek: Strange New Worlds" .
